@@ -6,11 +6,11 @@ title: 'WriteUp - "Source" de THM'
 categories: "Writeups"
 ---
 
-Petit writeup de la très très simple machine "Source" du site [TryHackMe.com](https://tryhackme.com).
+Petit writeup de la très (très) simple machine "Source" du site [TryHackMe.com](https://tryhackme.com).
 
 ## Énumération
 
-Comme toujours lors de mes CTF je commence par une petite énumération, d'abord avec Nmap et en testant s'il y a un site sur le port par défaut (80).
+Comme toujours lors de mes CTF je commence par une petite énumération, d'abord avec Nmap tout en testant s'il y a un site sur le port par défaut (80).
 
 Apparement pas de site sur le port 80, donc pas de gobuster.
 
@@ -36,15 +36,15 @@ PORT      STATE SERVICE VERSION
 
 Je fais toujours un `-oN nmap_a.txt` pour garder une trace du Nmap au cas où.
 
-Du coup un port 22  avec 7.6p1 qui ne nous apporte pas grand après une verification sur [Exploit-DB](https://www.exploit-db.com/search?q=openssh), par contre le port 10000 avec webmin *1.890* après une vérification sur le même site on a quelques trucs intéressants.
+Du coup un port 22  avec 7.6p1 qui ne nous apporte pas grand chose après une verification sur [Exploit-DB](https://www.exploit-db.com/search?q=openssh), par contre le port 10000 avec webmin *1.890* d'après on a quelques trucs intéressants.
 
 ![Webmin Exploit DB](/assets/images/1_2_exploitdb.png)
 
-J'ai d'abord essayé le 2ème lien, car les autres utilisent Metasploit et que je préfère éviter quand je peux. Le soucis c'est que c'est juste une vérification de vulnérabilité et qu'en plus je n'ai pas réussi à lancer le script correctement.
+J'ai d'abord essayé le 2ème lien, car les autres utilisent Metasploit et que je préfère éviter quand je peux. Le souci c'est que c'est juste une vérification de vulnérabilité et qu'en plus je n'ai pas réussi à lancer le script correctement.
 
-Je suis donc passé au premier lien qui indique "**<** 1.920", sur metasploit j'ai cherché le script mais il n'y était pas, je l'ai donc téléchargé et ajouter dans `/home/<user>/.msf4/modules/webmin` (il faudra créer le dossier webmin, et il est possible que vous ayez le dossier `.msf5` au lieu de `.msf4`). Une fois lancé, je regarde les options et me rend compte qu'il faut un login et un mot de passe... Mauvaise pioche encore !
+Je suis donc passé au premier lien qui indique "**<** 1.920", sur metasploit j'ai cherché le script mais il n'y était pas, je l'ai donc téléchargé et ajouté dans `/home/<user>/.msf4/modules/webmin` (il faudra créer le dossier webmin, et il est possible que vous ayez le dossier `.msf5` au lieu de `.msf4`). Une fois lancé, je regarde les options et me rend compte qu'il faut un login et un mot de passe... Mauvaise pioche encore !
 
-Cette fois j'essaie le troisième qui indique "Webmin 1.920 - Unauthenticated Remote Code Execution", la mauvaise nouvelle c'est qu'il n'y a pas de "<", mais la bonne c'est le "*Unauthenticated* " ! En lisant l'exploit on apprend que c'est une backdoor laissé par un ou plusieurs pirates et que cet exploit fonctionne de la version 1.890 à 1.920 ! Ouf ! Voici son CVE : [CVE-2019-15107](https://nvd.nist.gov/vuln/detail/CVE-2019-15107).
+Cette fois j'essaie le troisième qui indique "Webmin 1.920 - Unauthenticated Remote Code Execution", la mauvaise nouvelle c'est qu'il n'y a pas de "<", mais la bonne c'est le "*Unauthenticated* " ! En lisant l'exploit on apprend que c'est une backdoor laissé par un ou plusieurs pirates et que cet exploit fonctionne de la version 1.890 à 1.920 ! Ouf ! Voici sa CVE : [CVE-2019-15107](https://nvd.nist.gov/vuln/detail/CVE-2019-15107).
 Du coup on va chercher sur Metasploit :
 
 ```shell
@@ -69,7 +69,7 @@ Matching Modules
 
 ## Exploitation
 
-Cool, il y est déjà donc on peut sélectionner le module 2 qui correspond à peu près au niveau de la date (2019-08-10) et parle de backdoor :
+Cool, il y est déjà donc on peut sélectionner le module 2 qui correspond à peu près au niveau de la date (2019-08-10) et indique "backdoor" :
 
 ```
 msf5 > use 2
