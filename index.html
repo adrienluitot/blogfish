@@ -1,0 +1,35 @@
+---
+title: Home
+---
+
+<div class="blog-container">
+	<div class="blog-posts">
+		{% for post in paginator.posts %}
+			<div class="blog-post">
+				<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+				<span class="blog-date">Le {{ post.date | date: "%d/%m/%Y" }}</span>
+				{{ post.excerpt }}
+			</div>
+		{% endfor %}
+    </div>
+    
+	<div class="pagination">
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path }}">
+			Plus récents
+			</a>
+		{% else %}
+			<span class="pagination-disabled">Plus récents</span>
+		{% endif %}
+
+		<span class="page-number">
+			{{ paginator.page }} sur {{ paginator.total_pages }}
+		</span>
+
+		{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path }}">Plus anciens</a>
+		{% else %}
+			<span class="pagination-disabled">Plus anciens</span>
+		{% endif %}
+	</div>
+</div>

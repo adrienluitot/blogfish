@@ -1,0 +1,33 @@
+# See if we add the plugins : jekyll-sitemap and jekyll-seo-tag (check: https://jekyllrb.com/docs/step-by-step/10-deployment/)
+# See if we compress css output
+
+paginate: 5
+
+permalink: 404.html
+
+plugins:
+  - jekyll-target-blank
+
+collections:
+  category:
+    output: true
+    permalink: /:name
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "main"
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      permalink: /p/:title
+      layout: "post"
+  

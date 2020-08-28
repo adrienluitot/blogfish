@@ -1,0 +1,21 @@
+<div class="container">
+    <a class="blog-title" href="/">
+        <img src="/assets/images/illus.svg" alt="BlobFish Illustration"> <span>BlogFish</span>
+    </a>
+</div>
+
+<nav class="container navbar navbar-expand-md">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto">
+            {% for item in site.data.navbar %}
+                <li class="nav-item{% if page.url == item.link %} active{% endif %}">
+                    <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

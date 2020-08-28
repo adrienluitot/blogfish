@@ -1,0 +1,21 @@
+---
+layout: main
+---
+
+<div class="blog-container post">
+    <span class="post-header">
+        <span class="blog-date">{{ page.date | date: "%d/%m/%Y" }}</span>
+        -
+        <span class="licence">
+            <i class="fab fa-creative-commons"></i>
+            {% assign licences = page.licence | remove: "CC-" | downcase | split: "-" %}
+            {% for licence in licences %}
+                <i class="fab fa-creative-commons-{{licence}}"></i>
+            {% endfor %}
+        </span>
+    </span>
+
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+</div>

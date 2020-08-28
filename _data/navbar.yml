@@ -1,0 +1,12 @@
+- name: 127.0.0.1
+  link: /
+- name: "~/about.md"
+  link: /p/about
+- name: "~/writeups"
+  link: /writeups
+- name: "~/info_sec"
+  link: /info_sec
+- name: "~/autres"
+  link: /autres
+
+# Check how to automate categories ?
