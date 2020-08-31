@@ -1,6 +1,8 @@
 # See if we add the plugins : jekyll-sitemap and jekyll-seo-tag (check: https://jekyllrb.com/docs/step-by-step/10-deployment/)
 # See if we compress css output
 
+title: "BlogFish"
+
 paginate: 5
 
 permalink: 404.html

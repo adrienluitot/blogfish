@@ -14,7 +14,7 @@ Comme toujours lors de mes CTF je commence par une petite énumération, d'abord
 
 Apparement pas de site sur le port 80, donc pas de gobuster.
 
-![No website](/assets/images/1_1_no80.png)
+![No website](/assets/images/1_1_no80.webp)
 
 Voyons voir ce que nous sort Nmap...
 
@@ -38,7 +38,7 @@ Je fais toujours un `-oN nmap_a.txt` pour garder une trace du Nmap au cas où.
 
 Du coup un port 22  avec 7.6p1 qui ne nous apporte pas grand chose après une verification sur [Exploit-DB](https://www.exploit-db.com/search?q=openssh), par contre le port 10000 avec webmin *1.890* d'après on a quelques trucs intéressants.
 
-![Webmin Exploit DB](/assets/images/1_2_exploitdb.png)
+![Webmin Exploit DB](/assets/images/1_2_exploitdb.webp)
 
 J'ai d'abord essayé le 2ème lien, car les autres utilisent Metasploit et que je préfère éviter quand je peux. Le souci c'est que c'est juste une vérification de vulnérabilité et qu'en plus je n'ai pas réussi à lancer le script correctement.
 

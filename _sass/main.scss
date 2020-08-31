@@ -75,6 +75,19 @@ body {
     .navbar-toggler {
         color: #252525;
     }
+
+    .navbar-collapse {
+        position: relative;
+        overflow: hidden;
+        transition: height 0.35s ease 0s;
+
+        &.collapsing {
+            height: 0;
+        }
+        &.collapse:not(.show) {
+            display: none;
+        }
+    }
 }
 
 .main-container {

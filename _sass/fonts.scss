@@ -1,8 +1,14 @@
 // LORA
 @font-face {
     font-family: 'Lora';
-    font-weight: 1 999;
-    src: url('../webfonts/lora/lora.ttf');
+    font-weight: 400;
+    src: url('../webfonts/lora/Lora-Regular.woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lora';
+    font-weight: 700;
+    src: url('../webfonts/lora/Lora-Bold.woff2');
     font-display: swap;
 }
 
@@ -10,7 +16,19 @@
 //  INCONSOLATA
 @font-face {
     font-family: 'Inconsolata';
-    font-weight: 1 999;
-    src: url('../webfonts/inconsolata/inconsolata.ttf');
+    font-weight: 400;
+    src: url('../webfonts/inconsolata/Inconsolata-Regular.woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inconsolata';
+    font-weight: 700;
+    src: url('../webfonts/inconsolata/Inconsolata-Bold.woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inconsolata';
+    font-weight: 900;
+    src: url('../webfonts/inconsolata/Inconsolata-Black.woff2');
     font-display: swap;
 }
