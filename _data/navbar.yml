@@ -5,7 +5,7 @@
 - name: "~/writeups"
   link: /writeups
 - name: "~/info_sec"
-  link: /info_sec
+  link: /infosec
 - name: "~/autres"
   link: /autres
 
