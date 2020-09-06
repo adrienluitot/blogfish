@@ -1,6 +1,6 @@
 body {
     font-size: 1.3rem;
-    color: #252525;
+    color: #2e2a1f;
     font-family: 'Inconsolata', monospace;
     background: #f8f9fa;
 }
@@ -177,6 +177,23 @@ img {
     height: auto;
 }
 
+pre {
+    background: rgba(95, 72, 7, .035);
+    padding: .75rem;
+}
+
+pre, code {
+    font-family: 'Inconsolata', monospace;
+}
+
+blockquote {
+    border-left: 6px solid #4d4633;
+    padding-left: .5rem;
+    font-style: italic;
+}
+
+
+
 .blog-container {
     font-family: 'Lora', serif;
     font-size: 1.2rem;
@@ -195,7 +212,7 @@ img {
             font-size: 2.5rem;
 
             a {
-                color: #252525;
+                color: #2e2a1f;
                 text-decoration: none;
         
                 &:hover {
@@ -230,16 +247,6 @@ img {
         margin: 2rem 0 .5rem 0;
     }
 }
-
-pre {
-    background: rgba(95, 72, 7, .035);
-    padding: .75rem;
-}
-
-pre, code {
-    font-family: 'Inconsolata', monospace;
-}
-
 
 
 .pagination {
