@@ -6,7 +6,7 @@
   link: /writeups
 - name: "~/info_sec"
   link: /infosec
-- name: "~/autres"
-  link: /autres
+- name: "~/electronics"
+  link: /electronics
 
 # Check how to automate categories ?
