@@ -2,6 +2,7 @@
 # See if we compress css output
 
 title: "BlogFish"
+url: ""
 
 paginate: 5
 
