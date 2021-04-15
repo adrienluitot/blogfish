@@ -1,7 +1,9 @@
+const nbCollapse = document.getElementById("main-navbar");
+const nbCollapseHeight = document.getElementById("main-navbar").style;
+
+
 document.getElementById("navbar-toggler").addEventListener("click", (e) => { 
-   let nbCollapse = document.getElementById("main-navbar");
    if(nbCollapse.classList.contains("show")) {
-        nbCollapse.classList.remove("collapse");
         nbCollapse.classList.remove("show");
 
         nbCollapse.classList.add("collapsing");
@@ -19,7 +21,6 @@ document.getElementById("navbar-toggler").addEventListener("click", (e) => {
 
         setTimeout(() => {
             nbCollapse.classList.remove("collapsing");
-            nbCollapse.classList.add("collapse");
             nbCollapse.classList.add("show");
         }, 360);
    }
@@ -27,7 +28,6 @@ document.getElementById("navbar-toggler").addEventListener("click", (e) => {
 
 window.addEventListener('resize', (e) => {
     if(document.getElementsByTagName("body")[0].clientWidth >= 768) {
-        let nbCollapseHeight = document.getElementById("main-navbar").style;
         if(nbCollapseHeight.height) {
             nbCollapseHeight.removeProperty('height');
         }

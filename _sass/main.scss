@@ -113,10 +113,11 @@ body {
     }
 }
 @media (min-width: 2000px) {
-    .blog-container {
-        max-width: 1140px;
+    .container {
+      max-width: 960px;
     }
 }
+
 
 .blog-container {
     width: 100%;
@@ -129,17 +130,17 @@ body {
         max-width: 540px;
     }
 }
-
 @media (min-width: 768px) {
     .blog-container {
         max-width: 720px;
     }
 }
 @media (min-width: 2000px) {
-    .container {
-      max-width: 960px;
+    .blog-container {
+        max-width: 1140px;
     }
 }
+
 
 a {
     outline: none !important;
@@ -164,6 +165,14 @@ a {
             font-size: .67rem;
             margin-left: 2px;
             vertical-align: top;
+        }
+
+        &.image-link { 
+            display: inline-block;
+
+            &:after {
+                position: absolute;
+            } 
         }
     }
 }
