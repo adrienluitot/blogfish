@@ -4,6 +4,10 @@
 title: "BlogFish"
 url: ""
 
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+
 paginate: 5
 
 permalink: 404.html
@@ -22,11 +26,14 @@ defaults:
     values:
       layout: "main"
   - scope:
+      path: "feed.xml"
+    values:
+      layout: "simple"
+  - scope:
       path: ""
       type: category
     values:
       layout: "category"
-
   - scope:
       path: "_posts"
       type: "posts"
